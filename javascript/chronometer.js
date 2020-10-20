@@ -6,7 +6,7 @@ class Chronometer {
   startClick(callback) {
     this.intervalId = setInterval(() => {
       this.currentTime++;
-
+ 
       if(callback) {
         callback();
       };
@@ -18,16 +18,13 @@ class Chronometer {
     if(this.currentTime === 0) {
       return 0;
     }
-
-    return this.currentTime = Math.floor(this.currentTime / 60);
-    
+    return Math.floor(this.currentTime / 60);
   }
 
   getSeconds() {
     if(this.currentTime === 0) {
       return 0;
     }
-
     return this.currentTime % 60;
   }
   
